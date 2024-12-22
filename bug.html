@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      // Incorrectly attempting to remove the div element by setting its innerHTML to an empty string. 
+      document.getElementById("myDiv").innerHTML = "";
+      //This does not remove the div element from the DOM, it only clears its content. 
+      //To remove the div element, use removeChild() method 
+      // document.body.removeChild(document.getElementById("myDiv"));
+    }
+  </script>
+</body>
+</html>
